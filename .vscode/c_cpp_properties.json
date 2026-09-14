@@ -10,13 +10,16 @@
             "includePath": [
                 "C:/Users/aslan/Projects/trivialNames/include",
                 "C:/Users/aslan/Projects/trivialNames/src",
+                "C:/Users/aslan/Projects/trivialNames/.pio/libdeps/nanoatmega328/Adafruit SSD1306",
+                "C:/Users/aslan/Projects/trivialNames/.pio/libdeps/nanoatmega328/Adafruit GFX Library",
+                "C:/Users/aslan/Projects/trivialNames/.pio/libdeps/nanoatmega328/Adafruit BusIO",
+                "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "C:/Users/aslan/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "C:/Users/aslan/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                 "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 ""
             ],
             "browse": {
@@ -24,13 +27,16 @@
                 "path": [
                     "C:/Users/aslan/Projects/trivialNames/include",
                     "C:/Users/aslan/Projects/trivialNames/src",
+                    "C:/Users/aslan/Projects/trivialNames/.pio/libdeps/nanoatmega328/Adafruit SSD1306",
+                    "C:/Users/aslan/Projects/trivialNames/.pio/libdeps/nanoatmega328/Adafruit GFX Library",
+                    "C:/Users/aslan/Projects/trivialNames/.pio/libdeps/nanoatmega328/Adafruit BusIO",
+                    "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "C:/Users/aslan/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "C:/Users/aslan/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                     "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                    "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                    "C:/Users/aslan/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     ""
                 ]
             },
