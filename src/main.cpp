@@ -16,22 +16,26 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 };
 
-void print_molecular_formula(struct molecule Molecule);
-void print_trivialname(struct molecule Molecule);
-
+void print_molecular_formula(const struct molecule *Molecule);
+void print_trivialname(const struct molecule *Molecule);
 
 
 void setup() {
 
  struct molecule nitric_acid = {
   "HNO3", 
-  "Sa"
+  "Salpetersaure"
  };
+struct molecule *nitric_acid_p;
+nitric_acid_p = &nitric_acid;
  
+ 
+
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-  //print_molecular_formula(nitric_acid);
-  //delay(500);
-  print_trivialname(nitric_acid);
+
+  print_molecular_formula(nitric_acid_p);
+  delay(500);
+  print_trivialname(nitric_acid_p);
   
 }
 
@@ -42,9 +46,10 @@ void loop() {
 
 
 
-void print_molecular_formula(struct molecule Molecule){
-  char Molecular_formula[50];
-  strcpy(Molecular_formula, Molecule.molecular_formula);
+void print_molecular_formula(const struct molecule *Molecule){
+
+ char Molecular_formula[50];
+ strcpy(Molecular_formula, Molecule->molecular_formula);
 
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
@@ -54,9 +59,10 @@ void print_molecular_formula(struct molecule Molecule){
   display.display();
 }
 
-void print_trivialname(struct molecule Molecule){
-  char Trivialname[100];
-  strcpy(Trivialname, Molecule.trivialname);
+void print_trivialname(const struct molecule *Molecule){
+
+char Trivialname[100];
+strcpy(Trivialname, Molecule->trivialname);
 
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
