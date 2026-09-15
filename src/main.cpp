@@ -3,71 +3,37 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <string.h>
+#include "molecules.h"
+#include "states.h"
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
- struct molecule
-{
-  char molecular_formula[50];
-  char trivialname[100];
-
-};
-
-void print_molecular_formula(const struct molecule *Molecule);
-void print_trivialname(const struct molecule *Molecule);
-
-
-void setup() {
-
  struct molecule nitric_acid = {
   "HNO3", 
   "Salpetersaure"
  };
-struct molecule *nitric_acid_p;
-nitric_acid_p = &nitric_acid;
- 
- 
+
+struct molecule *nitric_acid_p = &nitric_acid;
+
+states CurrentState = INIT;
+
+
+
+void setup() {
+
+  pinMode(5, INPUT_PULLUP);
 
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-
-  print_molecular_formula(nitric_acid_p);
-  delay(500);
-  print_trivialname(nitric_acid_p);
-  
+  print_molecular_formula(&display, nitric_acid_p);
 }
 
 
 void loop() {
-}
 
+transition(&CurrentState);
+output(&CurrentState, nitric_acid_p, &display);
 
-
-
-void print_molecular_formula(const struct molecule *Molecule){
-
- char Molecular_formula[50];
- strcpy(Molecular_formula, Molecule->molecular_formula);
-
-  display.clearDisplay();
-  display.setTextColor(SSD1306_WHITE);
-  display.setTextSize(2);
-  display.setCursor(0, 0);
-  display.println(Molecular_formula);
-  display.display();
-}
-
-void print_trivialname(const struct molecule *Molecule){
-
-char Trivialname[100];
-strcpy(Trivialname, Molecule->trivialname);
-
-  display.clearDisplay();
-  display.setTextColor(SSD1306_WHITE);
-  display.setTextSize(2);
-  display.setCursor(0, 0);
-  display.println(Trivialname);
-  display.display();
 }
