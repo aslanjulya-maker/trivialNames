@@ -3,11 +3,6 @@
 
 int isButtonPressed(uint8_t pin){
 
-    if (digitalRead(pin)){
-        delay(200);
-        return 1;
-    }
-    else{
-        return 0;
-    }
+return digitalRead(pin) == LOW;
+
 }

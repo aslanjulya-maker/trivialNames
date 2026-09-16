@@ -3,34 +3,48 @@
 
 void transition(enum states *State){
     
-    if((*State == INIT) && isButtonPressed(5)){
+    switch(*State){
 
-        *State = SHOW_FORMULA;
-    }
+        case INIT:
+            if(isButtonPressed(5)){
+            *State = SHOW_FORMULA;
+            }
+        break;
 
-    if((*State == SHOW_FORMULA) && isButtonPressed(5)){
+        case SHOW_FORMULA:
+            if(isButtonPressed(5)){
+                *State = SHOW_NAME;
+                delay(200);
+            }
+        break;
 
-        *State = SHOW_NAME;
-    }
-
-    if((*State == SHOW_NAME) && isButtonPressed(5)){
-
-        *State = SHOW_FORMULA;
+        case SHOW_NAME:
+            if(isButtonPressed(5)){
+                *State = SHOW_FORMULA;
+                delay(200);
+            }
+            break;
     }
 
 }
 
 void output(const enum states *State, const struct molecule *CurrentMolecule, Adafruit_SSD1306 *display){
 
-    if(*State == INIT){
+    switch (*State)
+    {
+ 
+        case INIT:
         print_init(display);
-    }
+        break;
 
-    if(*State == SHOW_FORMULA){
+        case SHOW_FORMULA:
         print_molecular_formula(display, CurrentMolecule);
+        break;
+
+        case SHOW_NAME:
+        print_trivialname(display, CurrentMolecule);
+        break;
+
     }
 
-    if(*State == SHOW_NAME){
-        print_trivialname(display, CurrentMolecule);
-    }
 }
