@@ -9,7 +9,7 @@ enum states{
     INIT, SHOW_FORMULA, SHOW_NAME
 };
 
-void transition(enum states *State);
+void transition(enum states *State, int buttonPressed);
 
 void output(const enum states *State, const struct molecule *CurrentMolecule, Adafruit_SSD1306 *display);
 

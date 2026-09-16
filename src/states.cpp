@@ -1,29 +1,26 @@
 #include "states.h"
 
-
-void transition(enum states *State){
+void transition(enum states *State, int buttonPressed){
     
     switch(*State){
 
         case INIT:
-            if(isButtonPressed(5)){
-            *State = SHOW_FORMULA;
+            if(buttonPressed){
+                *State = SHOW_FORMULA;
             }
         break;
 
         case SHOW_FORMULA:
-            if(isButtonPressed(5)){
+            if(buttonPressed){
                 *State = SHOW_NAME;
-                delay(200);
             }
         break;
 
         case SHOW_NAME:
-            if(isButtonPressed(5)){
+            if(buttonPressed){
                 *State = SHOW_FORMULA;
-                delay(200);
             }
-            break;
+        break;
     }
 
 }

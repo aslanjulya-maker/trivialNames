@@ -8,3 +8,6 @@ compile_commands.json
 
 # macOS metadata
 .DS_Store
+
+#other
+list.pdf
