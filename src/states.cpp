@@ -1,4 +1,5 @@
 #include "states.h"
+#include "print_turkiye.h"
 
 void transition(enum states *State, int buttonPressed){
     
@@ -31,7 +32,7 @@ void output(const enum states *State, const struct molecule *CurrentMolecule, Ad
     {
  
         case INIT:
-        print_init(display);
+        print_turkiye(display);
         break;
 
         case SHOW_FORMULA:
